@@ -12,7 +12,7 @@ with open("tokenfile.json", "r") as file:
     tokenfile = json.load(file)
 
 class MyClient(discord.Client):
-    token = tokenfile["api_token"]
+    token = tokenfile["lolz_api_token"]
     profile_id = tokenfile["profile_id"]
     api = LolzteamApi(token, profile_id)
 
@@ -43,7 +43,7 @@ class MyClient(discord.Client):
             account = accounts['items'][0]
 
             i = 1
-            while (account['price'] > self.cheapest_price):
+            while (account['price'] > int(self.cheapest_price)):
                 account = accounts['items'][i]
                 i += 1
 
@@ -180,4 +180,4 @@ intents.message_content = True
 
 
 client = MyClient(intents=intents)
-client.run(tokenfile["token"])
+client.run(tokenfile["discord_bot_token"])
