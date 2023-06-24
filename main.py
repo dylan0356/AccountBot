@@ -96,6 +96,7 @@ class MyClient(discord.Client):
                 embed.set_footer(text="Created by: " + "dylancanada")
 
                 #send the embed to the accountChannelID
+                print("New Account Found - Sending Message")
                 await channel.send(embed=embed)
 
             await asyncio.sleep(15)
