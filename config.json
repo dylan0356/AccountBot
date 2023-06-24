@@ -1,5 +1,7 @@
 {
     "prefix": "!",
     "channel_id": "1121612148326547476",
-    "role_id_to_ping": "1121937147281285190"
+    "role_id_to_ping": "1121937147281285190",
+    "cheapest_price": "15"
+    
   }

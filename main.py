@@ -4,7 +4,6 @@ import asyncio
 from datetime import datetime
 
 from urllib.parse import urlencode
-import webbrowser
 
 from lolzapi import LolzteamApi
 import time
@@ -23,6 +22,7 @@ class MyClient(discord.Client):
     roleID = config["role_id_to_ping"]
     prefix = config["prefix"]
     channel_id = config["channel_id"]
+    cheapest_price = config["cheapest_price"]
 
     currentLastAccountID = ''
 
@@ -43,7 +43,7 @@ class MyClient(discord.Client):
             account = accounts['items'][0]
 
             i = 1
-            while (account['price'] > 10):
+            while (account['price'] > self.cheapest_price):
                 account = accounts['items'][i]
                 i += 1
 
